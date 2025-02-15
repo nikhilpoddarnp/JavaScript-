@@ -1,0 +1,147 @@
+JavaScript में .this, .then() और दूसरे Keywords कैसे काम करते हैं?
+JavaScript में .this, .then(), और दूसरे Keywords अलग-अलग Concepts से जुड़े होते हैं। चलो एक-एक करके इन सभी को Detail में समझते हैं।
+
+1️⃣ this क्या होता है और कैसे काम करता है?
+✅ Real-Life Example: Self-Identity (मैं कौन हूं?)
+Imagine करो कि तुम अपने दोस्त के घर गए हो और किसी ने तुमसे पूछा:
+
+"Who are you?" (तुम कौन हो?)
+
+तुमारा जवाब होगा: "मैं [तुम्हारा नाम] हूं।"
+पर अगर तुम अपने घर में हो और कोई पूछे, तब भी जवाब वही रहेगा, लेकिन जगह बदल जाएगी।
+
+ठीक इसी तरह, JavaScript में this का मतलब Object के Context के हिसाब से बदलता रहता है।
+
+✅ Example 1: Normal Function में this (Global Context)
+javascript
+Copy
+Edit
+console.log(this); // Browser में यह `window` Object को Print करेगा
+✔ Global Scope में this, window Object को Refer करता है।
+
+✅ Example 2: Object के अंदर this
+javascript
+Copy
+Edit
+const person = {
+  name: "John",
+  getName: function () {
+    return this.name; // `this` refers to `person` object
+  },
+};
+
+console.log(person.getName()); // Output: John
+✔ यहाँ this, person Object को Refer कर रहा है।
+
+✅ Example 3: Arrow Function में this (Lexical Scope)
+javascript
+Copy
+Edit
+const person = {
+  name: "Alice",
+  getName: () => {
+    console.log(this.name);
+  },
+};
+
+person.getName(); // Output: undefined
+❌ Arrow Function में this, Parent Scope (Global Object) से आता है, इसलिए Output undefined होगा।
+
+2️⃣ .then() क्या है और कैसे काम करता है?
+✅ Real-Life Example: Online Order (Promise Concept)
+Imagine करो कि तुमने Amazon से एक Mobile Order किया।
+
+तुम्हें दो Possible Outcomes मिल सकते हैं:
+
+Order Successful → तुम्हें Mobile मिल जाएगा ✅
+Order Failed → तुम्हें Refund मिलेगा ❌
+JavaScript में Promise भी ऐसे ही काम करता है। जब API Call या कोई Async Task होता है, तो .then() और .catch() उसे Handle करने में मदद करते हैं।
+
+✅ Example 1: Basic then() Example
+javascript
+Copy
+Edit
+const myPromise = new Promise((resolve, reject) => {
+  let success = true; // इसे false करने पर Reject होगा
+  setTimeout(() => {
+    if (success) {
+      resolve("Order Delivered! ✅");
+    } else {
+      reject("Order Failed! ❌");
+    }
+  }, 2000);
+});
+
+myPromise
+  .then((message) => {
+    console.log("Success:", message);
+  })
+  .catch((error) => {
+    console.log("Error:", error);
+  });
+✔ अगर Promise Resolve होगा, तो .then() Execute होगा।
+✔ अगर Promise Reject होगा, तो .catch() Execute होगा।
+
+✅ Example 2: API Call using fetch() with .then()
+javascript
+Copy
+Edit
+fetch("https://jsonplaceholder.typicode.com/users")
+  .then((response) => response.json()) // JSON में Convert करना
+  .then((data) => console.log(data)) // Data Print करना
+  .catch((error) => console.error("Error fetching data:", error)); // Error Handle करना
+✔ हर .then() Previous Promise के Resolve होने के बाद Execute होता है।
+
+3️⃣ call(), apply(), और bind()
+✅ Real-Life Example: Borrowing Someone’s Car
+तुमने अपने दोस्त से कार उधार ली, लेकिन अब तुम खुद उसे चला रहे हो।
+ठीक इसी तरह, JavaScript में call(), apply(), और bind() किसी Object का Method दूसरे Object में Use करने देते हैं।
+
+✅ Example 1: call()
+javascript
+Copy
+Edit
+const person1 = { name: "Alice" };
+const person2 = { name: "Bob" };
+
+function greet() {
+  console.log("Hello, " + this.name);
+}
+
+greet.call(person1); // Output: Hello, Alice
+greet.call(person2); // Output: Hello, Bob
+✔ यहां हमने greet() Function को person1 और person2 Objects के साथ Borrow किया।
+
+✅ Example 2: apply() (Same as call() but with Array Arguments)
+javascript
+Copy
+Edit
+function introduce(age, city) {
+  console.log(`I am ${this.name}, ${age} years old from ${city}.`);
+}
+
+introduce.apply(person1, [25, "New York"]); // Output: I am Alice, 25 years old from New York.
+✔ यह call() जैसा ही है, लेकिन Arguments को Array में Pass करते हैं।
+
+✅ Example 3: bind() (Function को Future के लिए Bind करना)
+javascript
+Copy
+Edit
+const person = { name: "Charlie" };
+
+function sayHello() {
+  console.log("Hello, " + this.name);
+}
+
+const boundHello = sayHello.bind(person);
+boundHello(); // Output: Hello, Charlie
+✔ bind() Function को Bind करता है, लेकिन तुरंत Execute नहीं करता।
+
+🎯 Final Summary
+Concept	Real-Life Example	JavaScript Use
+this	खुद को पहचानना (Self-Identity)	Object के हिसाब से Scope Change होता है
+.then()	Online Order का Delivery Status	Promise Resolve होने पर Execute होता है
+call()	दोस्त की कार Borrow करना	किसी Object का Method दूसरे Object में Use करना
+apply()	दोस्त की कार Borrow करना (Extra Details के साथ)	call() जैसा, लेकिन Arguments Array में
+bind()	Future के लिए Driver Fix करना	Function Bind करता है, लेकिन Execute नहीं करता
+🔥 अब तुम्हें JavaScript के इन Keywords की अच्छी समझ हो गई होगी!
