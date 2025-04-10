@@ -40,3 +40,8 @@ console.log(againNewDate.getDay());  //for day
 console.log(againNewDate.getMonth() +1);  // for month or ishme 1 plush karna hai q ki month 0 se start hota hai
 
 
+console.log(againNewDate.toLocaleString('default', {
+    weekday : "long",
+}));
+
+
