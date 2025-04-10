@@ -27,3 +27,36 @@ let stringNumber = String(someNumber)
 
 console.log(stringNumber)
 console.log(typeof(stringNumber))
+
+// *********** Operations ***********
+
+let value = 3
+let newValue = -value
+console.log(newValue);  // -3
+
+
+//Basic operations
+
+// console.log(2+3);
+// console.log(2-3);
+// console.log(2*3);
+// console.log(2**3);
+// console.log(2/3);
+// console.log(2%3);
+
+
+let str1 = "hello"
+let str2 = " Nikhil"
+let str3 = str1 + str2
+
+console.log(str3);    // hello Nkhil
+console.log(1 + "2");  // 12
+console.log("1" + 2);  // 12
+console.log("1" + 2 + 3);  // 123
+console.log(1 + 2 + "3");  // 33
+
+let x= 4;
+let y=x++;
+console.log(`x:${x} and y: ${y}`);
+
+
