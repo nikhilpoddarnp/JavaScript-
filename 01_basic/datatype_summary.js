@@ -38,3 +38,35 @@ const myFunction = function (){
    console.log("hello");
    
 }
+
+
+
+
+//  +++++++++++++++++++++++++++++++++++++++++
+// to better understand read more about that
+// Stack memory : Primitive datatype use stack memory
+// Heap memory : Non- primitive datatype use stack memory
+
+let firstName = "Nikhil"
+let anotherName = firstName
+anotherName = "Rupesh"
+console.log(firstName);  //Nikhil
+console.log(anotherName); //Rupesh
+
+//in stack memory they make a copy of primitive datatype.
+
+let userOne ={
+    email : "user@gmail.com",
+    password : 123456,
+
+}
+
+let userTwo = userOne;
+userTwo.email="nikhil@gmail.com"
+
+console.log(userOne.email); // nikhil@gmail.com
+console.log(userTwo.email); // nikhil@gmail.com
+console.log(userTwo);
+
+
+
