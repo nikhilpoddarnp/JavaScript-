@@ -1,11 +1,11 @@
 let score = "33abc"
 
-console.log(typeof score);
-console.log(typeof (score));
+console.log(typeof score);  //string
+console.log(typeof (score));  //string
 
 let valueInNumber = Number(score)
-console.log(typeof valueInNumber);
-console.log(valueInNumber);
+console.log(typeof valueInNumber);  //number
+console.log(valueInNumber);   //NaN
 
 //score =
 // "33"  => 33
@@ -57,6 +57,6 @@ console.log(1 + 2 + "3");  // 33
 
 let x= 4;
 let y=x++;
-console.log(`x:${x} and y: ${y}`);
+console.log(`x:${x} and y: ${y}`);  //x:5 and y: 4
 
 
