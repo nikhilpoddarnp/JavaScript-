@@ -76,8 +76,27 @@ console.log(Object.values(tinderUser));  //[ '123abc', 'Veer', false ]
 
 console.log(tinderUser.hasOwnProperty('isLogin'));  //true
 
+const course = {
+    coursename: "js in hindi ",
+    price: 999,
+    courseInstructor: "hitesh"
+}
 
+const {courseInstructor: instructor} = course; // to avoid course.courseInstructor we assign variable as same as key name and 
+// we can access the value with the key name only but  when we define a new name  after : then we access this with the new name
+console.log(instructor); //hitesh
 
+//and we this thing in react but not in detail
+
+/*  destracturing in object in react 
+ const navbar = ({company}) => {
+
+   }
+
+navbar(company = "hitesh")
+*/
+
+//api : api ka data objects ya array ke form me hota hai or is liye ham array or object padhte hai taki api ke data ko achhe tarike se samajh sake.
 
 
 
