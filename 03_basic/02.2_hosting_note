@@ -1,0 +1,108 @@
+Great! Let’s understand **Hoisting in JavaScript** — ek aisa concept jo beginners ko confuse karta hai, lekin jab samajh aa jaye to JavaScript ka behavior aur clear ho jaata hai. 😎
+
+---
+
+## 🧠 What is Hoisting?
+
+**Hoisting** ka matlab hai —  
+> JavaScript interpreter **variable declarations** (like `var`, `let`, `const`) **aur function declarations** ko _"top of their scope"_ pe le jaata hai **compile time pe**, _even before the code runs._
+
+Lekin **sirf declarations hoist hoti hain, assignments nahi**!
+
+---
+
+## 🔹 Example 1: Hoisting with `var`
+
+```js
+console.log(x);  // 👉 undefined (no error)
+var x = 10;
+console.log(x);  // 👉 10
+```
+
+### 🔍 How JavaScript interprets this:
+
+```js
+var x;            // hoisted to top
+console.log(x);   // undefined
+x = 10;
+console.log(x);   // 10
+```
+
+✅ `var` gets **hoisted with `undefined`** as default value.
+
+---
+
+## 🔸 Example 2: Hoisting with `let` and `const`
+
+```js
+console.log(y); // ❌ ReferenceError: Cannot access 'y' before initialization
+let y = 20;
+```
+
+### ⚠️ Why error?
+
+Because `let` and `const` are hoisted too BUT they go into a special zone called:
+
+### 🟨 **Temporal Dead Zone (TDZ)**
+
+Is time me variable exist karta hai, **lekin access karne pe error aata hai**, jab tak uski declaration line execute nahi hoti.
+
+---
+
+## 🧪 Summary: Variable Hoisting
+
+| Declaration | Hoisted? | Initial Value | Access Before Declaration |
+|-------------|----------|---------------|----------------------------|
+| `var`       | ✅ Yes   | `undefined`   | ✅ Allowed (but undefined) |
+| `let`       | ✅ Yes   | N/A (in TDZ)  | ❌ Error                  |
+| `const`     | ✅ Yes   | N/A (in TDZ)  | ❌ Error                  |
+
+---
+
+## 🔹 Function Hoisting
+
+### ✅ Function Declaration (Hoisted Fully)
+```js
+greet(); // 👉 Hello!
+function greet() {
+  console.log("Hello!");
+}
+```
+
+### ❌ Function Expression (NOT hoisted)
+```js
+greet(); // ❌ TypeError: greet is not a function
+var greet = function () {
+  console.log("Hello!");
+};
+```
+
+### ❌ Arrow Functions with `let` or `const` (NOT hoisted)
+```js
+hello(); // ❌ ReferenceError
+const hello = () => console.log("Hi!");
+```
+
+---
+
+## ✅ What Gets Hoisted?
+
+| Type                      | Hoisted | Executable Before? |
+|---------------------------|---------|---------------------|
+| `var` variable            | ✅      | ✅ (undefined)       |
+| `let` / `const` variable  | ✅      | ❌ (TDZ error)       |
+| Function Declaration      | ✅      | ✅                  |
+| Function Expression       | ✅ (var) / ❌ (`let`) | ❌ (TypeError / ReferenceError) |
+
+---
+
+## 🎯 Tips to Remember
+
+- Always declare variables at the **top of their scope**  
+- Prefer `let` and `const` over `var`  
+- Don’t access variables before declaring them (TDZ!)  
+- Function declarations are safe to call before definition  
+
+---
+
+Want to practice some small MCQs or debug questions based on **hoisting**? I can quiz you too! 😄
