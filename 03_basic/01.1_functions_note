@@ -1,0 +1,173 @@
+Great choice, Nikhil! 💡  
+Let's dive into **Functions in JavaScript** — one of the core building blocks of the language. Mastering them is key to becoming a pro developer. 💻✨
+
+---
+
+## 🔹 What is a Function?
+
+A **function** is a reusable block of code that performs a specific task.
+
+Basic syntax:
+```js
+function functionName(parameters) {
+  // code to execute
+}
+```
+
+You call (or invoke) a function like this:
+```js
+functionName(arguments);
+```
+
+---
+
+## 🔹 Types of Functions in JavaScript
+
+Let’s break down all the main types of functions:
+
+---
+
+### 1. **Function Declaration**
+
+```js
+function greet(name) {
+  console.log("Hello, " + name);
+}
+
+greet("Nikhil"); // 👉 Hello, Nikhil
+```
+
+✅ Hoisted (can be called before it’s defined)
+
+---
+
+### 2. **Function Expression**
+
+```js
+const greet = function(name) {
+  console.log("Hello, " + name);
+};
+
+greet("Nikhil");
+```
+
+❌ Not hoisted  
+✅ Can be assigned to variables or passed as arguments
+
+---
+
+### 3. **Arrow Function (ES6)**
+
+```js
+const greet = (name) => {
+  console.log("Hello, " + name);
+};
+
+greet("Nikhil");
+```
+
+✅ Shorter syntax  
+❌ Doesn’t have its own `this`  
+✅ Common in React & modern JS
+
+---
+
+### 4. **Anonymous Function**
+
+Function without a name — often used inside other functions:
+```js
+setTimeout(function () {
+  console.log("Hello after 2 seconds");
+}, 2000);
+```
+
+---
+
+### 5. **Callback Function**
+
+A function passed as an argument to another function:
+```js
+function greet(name, callback) {
+  console.log("Hi " + name);
+  callback();
+}
+
+greet("Nikhil", function () {
+  console.log("Welcome!");
+});
+```
+
+---
+
+### 6. **Constructor Function**
+
+Used to create objects:
+```js
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const p1 = new Person("Nikhil", 23);
+console.log(p1); // 👉 Person { name: 'Nikhil', age: 23 }
+```
+
+---
+
+### 7. **Immediately Invoked Function Expression (IIFE)**
+
+Executes immediately after it's defined:
+```js
+(function () {
+  console.log("I run instantly!");
+})();
+```
+
+---
+
+## 🔧 Return Statement
+
+Functions can return values:
+
+```js
+function add(a, b) {
+  return a + b;
+}
+
+let sum = add(3, 5); // 👉 8
+```
+
+---
+
+## 🧠 Why Use Functions?
+
+- Reusability
+- Clean code
+- DRY principle (Don't Repeat Yourself)
+- Modular design
+
+---
+
+## 👨‍🏫 Bonus: Higher-Order Functions
+
+Functions that take other functions as parameters or return functions:
+```js
+function multiply(x) {
+  return function(y) {
+    return x * y;
+  };
+}
+
+const double = multiply(2);
+console.log(double(5)); // 👉 10
+```
+
+---
+
+Would you like:
+
+✅ A quiz on functions?  
+✅ Some interview-based function questions?  
+✅ Practice problems or mini project ideas?
+
+Let me know what you’re feeling! 🚀
