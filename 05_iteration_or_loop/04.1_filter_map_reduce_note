@@ -1,0 +1,66 @@
+Great! Let's break down the **three powerful array methods in JavaScript**: `filter()`, `map()`, and `reduce()`. These are essential for modern JS, especially in **React** and **backend logic**.
+
+---
+
+## 🔹 1. `filter()`  
+### 👉 **Definition:**  
+Returns a **new array** containing **only the elements that pass a condition** (i.e., return `true` from the callback).
+
+### ✅ **Use Case:**  
+When you want to **select some elements** from an array.
+
+### 🧪 **Example:**
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const even = numbers.filter(num => num % 2 === 0);
+console.log(even); // [2, 4]
+```
+
+---
+
+## 🔹 2. `map()`  
+### 👉 **Definition:**  
+Returns a **new array** with the **same length**, but with **each element transformed** by the callback.
+
+### ✅ **Use Case:**  
+When you want to **change the values** in an array (e.g., double the numbers, format strings).
+
+### 🧪 **Example:**
+
+```javascript
+const numbers = [1, 2, 3];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // [2, 4, 6]
+```
+
+---
+
+## 🔹 3. `reduce()`  
+### 👉 **Definition:**  
+Reduces the array to **a single value** by running a callback on each element and **accumulating** the result.
+
+### ✅ **Use Case:**  
+When you want to calculate things like **sum, product, or an object** from array items.
+
+### 🧪 **Example:**
+
+```javascript
+const numbers = [1, 2, 3, 4];
+const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+console.log(sum); // 10
+```
+
+---
+
+### 🧠 Quick Summary Table:
+
+| Method   | Returns        | Use For                    |
+|----------|----------------|----------------------------|
+| `filter` | Filtered array | Select items by condition  |
+| `map`    | Transformed array | Modify each item          |
+| `reduce` | Single value    | Accumulate (sum, average)  |
+
+---
+
+Would you like real-life examples too, like using them in a **shopping cart app** or **todo list**?
