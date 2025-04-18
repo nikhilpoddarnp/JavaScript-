@@ -1,4 +1,3 @@
-Of course, Nikhil! Here's your neatly retyped and organized JavaScript roadmap from beginner to advanced level — ideal for study, printing, or converting into a Markdown file later:
 
 ---
 
@@ -97,4 +96,3 @@ Of course, Nikhil! Here's your neatly retyped and organized JavaScript roadmap f
 
 ---
 
-Let me know if you'd like this as a **Markdown file (.md)** for GitHub or a **PDF version** for offline use!
