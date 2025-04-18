@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const list = document.createElement('li');
+        list.innerHTML= ` ${langName}`
+        document.querySelector('.language').appendChild(list)
+    }
+    addLanguage("python")
+    addLanguage("java")
+    // now lets try a opmatize method for a big inputs
+    
+    function addoptiLanguage(langName){
+        const list = document.createElement('li')
+        list.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(list)
+    }
+addoptiLanguage('c++')
+</script>
+</html>
