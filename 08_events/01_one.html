@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body style="background-color: #414141; color: #fff;">
+    <h1 style="text-align: center; font-size: 50px; ">Amazing Image</h1>
+          <div >
+            <ul  style="display:flex ;list-style-type: none; " id="images">
+               <li><img width="200px" id="rabbit" src="https://images.pexels.com/photos/31500099/pexels-photo-31500099.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="rabbit"></li>
+                <li><img width="200px" id="cake" src="https://images.pexels.com/photos/3992134/pexels-photo-3992134.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><img width="200px" id="iphone" src="https://images.pexels.com/photos/31556531/pexels-photo-31556531/free-photo-of-minimalist-workspace-with-smartphone-and-accessories.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+                <li><img width="200px" id="house"  src="https://images.pexels.com/photos/30327991/pexels-photo-30327991/free-photo-of-historic-fort-in-okzitanien-france.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+                <li><a style="color: aliceblue;" href="https://google.com id= 'google" id="google">Google</a></li>
+            </ul>
+        </div>
+</body>
+<script>
+    //we have to study in event is : 
+// type of event 
+// timesptamp
+//defaultPrevented
+//target , toElement , srcElement
+//currentTarget
+// clientX , clientY ,screenX, screenY
+// altkey, ctrkey, shiftkey, keyCode
+
+
+
+    // document.getElementById("cake").onclick = function (){
+    //     alert('cake clicked')
+    // }  //this method is good
+
+    // document.getElementById('iphone').addEventListener('click', function(){
+    //     alert('iphone clicked')  //best method to trigger a event 
+    // })
+
+    // document.getElementById('house').addEventListener('click',function(e){
+    //     console.log(e);
+        
+    // },false) //hare false is default so if you write it or not it dosn't effected but let study about that
+    
+    
+    
+    // -------- event propogation : read more about it in note-----
+
+    // Bubbling: Event goes from the target element **up** to its ancestors 
+
+
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log('clicked inside the ul')
+    // },false) //if here we write false or not dosen't matter because it is dafault 
+
+    // document.getElementById('cake').addEventListener('click',function(e){
+    //     console.log('cake clicked ')
+    // },false)
+//when we click on cake image then console shows first "cake clicked" then it shows "clicked inside the ul "because of bubling
+
+// Capturing: Event goes from **top to bottom** to the target
+
+// document.getElementById('images').addEventListener('click',function(e){
+//         console.log('clicked inside the ul')
+//     },true)
+//     document.getElementById('cake').addEventListener('click',function(e){
+//         console.log('cake clicked')
+//     },true) //here we see oposite of bubbling 
+    // because when we click on cake image then console shows first "clicked inside the ul"  then it shows "cake clicked" because of bubling
+
+
+//but sometimes we don't want bubbling so we use a mehod  e.stopPropagation  and it happen in default value means on false
+
+
+// document.getElementById('images').addEventListener('click',function(e){
+//         console.log('clicked inside the ul')
+//     },false)
+
+//     document.getElementById('cake').addEventListener('click',function(e){
+//         console.log('cake clicked')
+//         e.stopPropagation()
+//     },false) 
+//     // in this method if we click on cake image then it shows "cake clicked" but we click on other images that are in ul then it shows ne "ckicked inside the ui"
+//     // all methods  have their special case there we use it
+
+// document.getElementById('google').addEventListener('click', function (e){
+//     e.preventDefault();
+//     console.log("google clicked") // yaha bhi do output aayega
+//     // e.stopPropagation()
+// }, false)
+
+
+// to remove one by one all images we use 'target' to triger the event at that point 
+document.querySelector('#images').addEventListener('click', function (e){
+    console.log(e.target.tagName);
+    if(e.target.tagName === 'IMG'){  //we use her tagName because if  we clicked on side of the image means under the ul then it will  remove all the ul items because on the next line
+        console.log(e.target.id);
+        let removeIt = e.target.parentNode // we triger here parentNode
+        removeIt.remove()
+        
+    }
+    
+})
+
+//read note for more information
+
+</script>
+</html>
