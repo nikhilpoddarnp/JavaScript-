@@ -20,3 +20,25 @@ because of issue in block scope and functional scope
 
 console.table([accountId, accountEmail,accountPassword,accountCity, accountstate])
 
+
+ function mera (){
+var a = 2 ;
+let b =3;
+const c =4
+  
+
+console.log( "value of a=" ,a,"value of b=",b,"value of c=",c);
+console.log(` value of a = ${a} value of b = ${b} value of c = ${c}`);
+
+
+
+
+
+ }
+//  console.log(a);
+ mera()
+//  console.log(` ${b}`);
+//  console.log(` ${c}`);
+
+var d =5
+console.log(d);

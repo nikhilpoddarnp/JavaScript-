@@ -20,7 +20,7 @@ let isLoggedIn = false
 
 // number  => 2 to the power 53
 // bigint 
-// string => ""
+// string => "" , '' , ``
 // boolean => true/false
 // null => standalone value / representation of empety value ex. let balence = null
 // undefine =>

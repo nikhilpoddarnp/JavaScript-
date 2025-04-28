@@ -54,6 +54,11 @@ console.log(1 + "2");  // 12
 console.log("1" + 2);  // 12
 console.log("1" + 2 + 3);  // 123
 console.log(1 + 2 + "3");  // 33
+console.log(3 - "2");  //1
+console.log("3" - 2);   //1
+console.log("3" - 2 - 1);   //0
+console.log(3 - 2 - "1");   //0
+
 
 let x= 4;
 let y=x++;
