@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+</head>
+<body>
+    <h1> Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    
+</body>
+<script>
+// setInterval(function (){
+//     console.log("nikhil", new Date());
+    
+// },1000)  //mormal use but in this evant is contitnue runing 
+
+//set third parameter and create a start and stop button
+let intervalId;
+const sayDate = function(str){
+   console.log(str,new Date)  
+}
+
+document.querySelector('#start').addEventListener('click', function(){
+    if(!intervalId){ // Start only if not already running
+        intervalId = setInterval(sayDate,1000,'hii')
+        console.log("Start");
+        
+    }
+})
+
+document.getElementById('stop').addEventListener('click',function(){
+    clearInterval(intervalId);
+    intervalId = null ; // Reset it
+    console.log("stop");
+    
+})
+
+</script>
+</html>
