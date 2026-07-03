@@ -25,7 +25,17 @@ console.table([accountId, accountEmail,accountPassword,accountCity, accountstate
 var a = 2 ;
 let b =3;
 const c =4
+if(true){
+    var a = 9 ;
+    let b =6;   
+    const c =7
+    console.log( "value of a=" ,a,"value of b=",b,"value of c=",c);
+    console.log(` value of a = ${a} value of b = ${b} value of c = ${c}`);
+}
   
+a=11;
+b=12;
+c=13;
 
 console.log( "value of a=" ,a,"value of b=",b,"value of c=",c);
 console.log(` value of a = ${a} value of b = ${b} value of c = ${c}`);
@@ -35,8 +45,8 @@ console.log(` value of a = ${a} value of b = ${b} value of c = ${c}`);
 
 
  }
-//  console.log(a);
  mera()
+//  console.log(a);
 //  console.log(` ${b}`);
 //  console.log(` ${c}`);
 

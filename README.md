@@ -1,7 +1,7 @@
 # JavaScript-
 Basic to Advance 
 
-to run on node :
+to run on terminal :
 $ node diractory_name.js
 
 For docunentation go on 

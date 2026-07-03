@@ -1,1 +1,4 @@
-console.log("Nikhil");
+const student = {
+    Name: "nikhil",
+    Roll No: 
+}

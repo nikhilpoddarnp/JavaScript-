@@ -11,7 +11,7 @@ console.log("Nikhil");
 
 
 let name = "Nikhil"
-let age = 23
+let age = 23;
 let isLoggedIn = false
 
 //datatype -> 
